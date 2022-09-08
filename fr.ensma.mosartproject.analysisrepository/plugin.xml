@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRTBackEnd/AnalysisRepository"
+            class="MoSaRTBackEnd_AnalysisRepository.MoSaRTBackEnd_AnalysisRepositoryPackage"
+            genModel="model/MoSaRTBackEnd_AnalysisRepository.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_6zWcYYl-EeKURJ5ZIzgaXg" documentation="Edition Context for MoSaRTBackEnd_AnalysisRepository GenPackage">
+    <categories xmi:id="_6zWcYol-EeKURJ5ZIzgaXg" name="MoSaRTBackEnd_AnalysisRepository">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWcY4l-EeKURJ5ZIzgaXg" name="AnalysisRepository" views="_6zXDhIl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcZIl-EeKURJ5ZIzgaXg" name="name" views="_6zXDhol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcZYl-EeKURJ5ZIzgaXg" name="description" views="_6zXDh4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcZol-EeKURJ5ZIzgaXg" name="allGeneralizationRelationships" views="_6zXDiIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allGeneralizationRelationships"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcZ4l-EeKURJ5ZIzgaXg" name="allContextModels" views="_6zXDiYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allContextModels"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcaIl-EeKURJ5ZIzgaXg" name="allRules" views="_6zXDiol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allRules"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcaYl-EeKURJ5ZIzgaXg" name="allTools" views="_6zXDi4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allTools"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcaol-EeKURJ5ZIzgaXg" name="mosartMetamodel" views="_6zXDjIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/mosartMetamodel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_H8b44ImHEeKjjISJ0vtdMw" name="allTestFamilies" views="_fB5SMIl_EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allTestFamilies"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWca4l-EeKURJ5ZIzgaXg" name="ContextModel" views="_6zXDjYl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcbIl-EeKURJ5ZIzgaXg" name="name" views="_6zXDj4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcbYl-EeKURJ5ZIzgaXg" name="description" views="_6zXDkIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcbol-EeKURJ5ZIzgaXg" name="references" views="_6zXDkYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/references"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcb4l-EeKURJ5ZIzgaXg" name="trueValueRules" views="_6zXDkol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/trueValueRules"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWccIl-EeKURJ5ZIzgaXg" name="falseValueRules" views="_6zXDk4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/falseValueRules"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_wpao4ImHEeKjjISJ0vtdMw" name="undefinedValueRules" views="_7hll8Il_EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/undefinedValueRules"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWccYl-EeKURJ5ZIzgaXg" name="analysisTests" views="_6zXDlIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/analysisTests"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="__IRBoImTEeKjjISJ0vtdMw" name="GeneralizationRelationship" views="_6zXDs4l-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HO4jcImUEeKjjISJ0vtdMw" name="name" views="_6zXDtYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_IWwKcImUEeKjjISJ0vtdMw" name="description" views="_6zXDtol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_L8W_MImUEeKjjISJ0vtdMw" name="genericModel" views="_6zXDuIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericModel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_MRhW4ImUEeKjjISJ0vtdMw" name="specificModel" views="_6zXDt4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificModel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_MlMg0ImUEeKjjISJ0vtdMw" name="behaviorKind" views="_6zXDuYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/behaviorKind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NLqq8ImUEeKjjISJ0vtdMw" name="genericToSpecificPath" views="_6zXDuol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericToSpecificPath"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NgBxYImUEeKjjISJ0vtdMw" name="specificToGenericPath" views="_6zXDu4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificToGenericPath"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWccol-EeKURJ5ZIzgaXg" name="Test" views="_6zXDlYl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcc4l-EeKURJ5ZIzgaXg" name="id" views="_6zXDl4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcdIl-EeKURJ5ZIzgaXg" name="name" views="_6zXDmIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcdYl-EeKURJ5ZIzgaXg" name="references" views="_6zXDmYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/references"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcdol-EeKURJ5ZIzgaXg" name="description" views="_6zXDmol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcd4l-EeKURJ5ZIzgaXg" name="itsTestFamily" views="_6zXDm4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/itsTestFamily"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWceIl-EeKURJ5ZIzgaXg" name="toolsToApply" views="_6zXDnIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/toolsToApply"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWceYl-EeKURJ5ZIzgaXg" name="characteristics" views="_6zXDnYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test/characteristics"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Test"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWceol-EeKURJ5ZIzgaXg" name="IdentificationRule" views="_6zXDnol-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWce4l-EeKURJ5ZIzgaXg" name="id" views="_6zXDoIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcfIl-EeKURJ5ZIzgaXg" name="timingKind" views="_6zXDoYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/timingKind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcfYl-EeKURJ5ZIzgaXg" name="componentKind" views="_6zXDool-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/componentKind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcfol-EeKURJ5ZIzgaXg" name="rule" views="_6zXDo4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/rule"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcf4l-EeKURJ5ZIzgaXg" name="ruleContext" views="_6zXDpIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/ruleContext"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcgIl-EeKURJ5ZIzgaXg" name="description" views="_6zXDpYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/description"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWcgYl-EeKURJ5ZIzgaXg" name="Tool" views="_6zXDpol-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcgol-EeKURJ5ZIzgaXg" name="id" views="_6zXDqIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcg4l-EeKURJ5ZIzgaXg" name="name" views="_6zXDqYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWchIl-EeKURJ5ZIzgaXg" name="description" views="_6zXDqol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWchYl-EeKURJ5ZIzgaXg" name="mosartToToolPath" views="_6zXDq4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/mosartToToolPath"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWchol-EeKURJ5ZIzgaXg" name="toolToMosartPath" views="_6zXDrIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/toolToMosartPath"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Tool"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWch4l-EeKURJ5ZIzgaXg" name="TestFamily" views="_6zXDrYl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWciIl-EeKURJ5ZIzgaXg" name="name" views="_6zXDr4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWciYl-EeKURJ5ZIzgaXg" name="description" views="_6zXDsIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWciol-EeKURJ5ZIzgaXg" name="references" views="_6zXDsYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/references"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWci4l-EeKURJ5ZIzgaXg" name="containedTests" views="_6zXDsol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/containedTests"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWcjIl-EeKURJ5ZIzgaXg" name="GeneralizationRelationship" views="_6zXDs4l-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcjYl-EeKURJ5ZIzgaXg" name="name" views="_6zXDtYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcjol-EeKURJ5ZIzgaXg" name="description" views="_6zXDtol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcj4l-EeKURJ5ZIzgaXg" name="specificModel" views="_6zXDt4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificModel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWckIl-EeKURJ5ZIzgaXg" name="genericModel" views="_6zXDuIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericModel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWckYl-EeKURJ5ZIzgaXg" name="behaviorKind" views="_6zXDuYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/behaviorKind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWckol-EeKURJ5ZIzgaXg" name="genericToSpecificPath" views="_6zXDuol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericToSpecificPath"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWck4l-EeKURJ5ZIzgaXg" name="specificToGenericPath" views="_6zXDu4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificToGenericPath"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWclIl-EeKURJ5ZIzgaXg" name="Deadline_Sustainability" views="_6zXDvIl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWclol-EeKURJ5ZIzgaXg" name="comment" views="_6zXDv4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zWcl4l-EeKURJ5ZIzgaXg" name="contexts" views="_6zXDwIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Deadline_Sustainability"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zWcmIl-EeKURJ5ZIzgaXg" name="Jitter_Sustainability" views="_6zXDwYl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDcIl-EeKURJ5ZIzgaXg" name="comment" views="_6zXDxIl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDcYl-EeKURJ5ZIzgaXg" name="contexts" views="_6zXDxYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Jitter_Sustainability"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zXDcol-EeKURJ5ZIzgaXg" name="Period_Sustainability" views="_6zXDxol-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDdIl-EeKURJ5ZIzgaXg" name="comment" views="_6zXDyYl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDdYl-EeKURJ5ZIzgaXg" name="contexts" views="_6zXDyol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//Period_Sustainability"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zXDdol-EeKURJ5ZIzgaXg" name="ExecutionTime_Sustainability" views="_6zXDy4l-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDeIl-EeKURJ5ZIzgaXg" name="comment" views="_6zXDzol-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDeYl-EeKURJ5ZIzgaXg" name="contexts" views="_6zXDz4l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//ExecutionTime_Sustainability"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zXDeol-EeKURJ5ZIzgaXg" name="SufficientCondition" views="_6zXD0Il-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDfIl-EeKURJ5ZIzgaXg" name="comment" views="_6zXD04l-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDfYl-EeKURJ5ZIzgaXg" name="contexts" views="_6zXD1Il-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//SufficientCondition"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_6zXDfol-EeKURJ5ZIzgaXg" name="NecessaryCondition" views="_6zXD1Yl-EeKURJ5ZIzgaXg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDgIl-EeKURJ5ZIzgaXg" name="comment" views="_6zXD2Il-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_6zXDgYl-EeKURJ5ZIzgaXg" name="contexts" views="_6zXD2Yl-EeKURJ5ZIzgaXg">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.ecore#//NecessaryCondition"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/fr.ensma.MoSaRTProject.AnalysisRepository/model/MoSaRTBackEnd_AnalysisRepository.genmodel#//MoSaRTBackEnd_AnalysisRepository"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_6zXDgol-EeKURJ5ZIzgaXg" documentation="Views repository for MoSaRTBackEnd_AnalysisRepository GenPackage" name="MoSaRTBackEnd_AnalysisRepository">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_6zXDg4l-EeKURJ5ZIzgaXg" name="MoSaRTBackEnd_AnalysisRepository">
+      <views xmi:id="_6zXDhIl-EeKURJ5ZIzgaXg" name="AnalysisRepository">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDhYl-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDhol-EeKURJ5ZIzgaXg" name="name" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDh4l-EeKURJ5ZIzgaXg" name="description" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDiIl-EeKURJ5ZIzgaXg" name="generalization Relationships" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDiYl-EeKURJ5ZIzgaXg" name="context Models">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDiol-EeKURJ5ZIzgaXg" name="identification Rules" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDi4l-EeKURJ5ZIzgaXg" name="analysis Tools" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDjIl-EeKURJ5ZIzgaXg" name="metaModel of MoSaRT" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_fB5SMIl_EeKURJ5ZIzgaXg" name="test Families" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDjYl-EeKURJ5ZIzgaXg" name="ContextModel">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDjol-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDj4l-EeKURJ5ZIzgaXg" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDkIl-EeKURJ5ZIzgaXg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDkYl-EeKURJ5ZIzgaXg" name="references">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDk4l-EeKURJ5ZIzgaXg" name="false Evaluation" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDkol-EeKURJ5ZIzgaXg" name="true Evaluation" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7hll8Il_EeKURJ5ZIzgaXg" name="undefined Evaluation" readOnly="true" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDlIl-EeKURJ5ZIzgaXg" name="analysisTests">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDlYl-EeKURJ5ZIzgaXg" name="Test">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDlol-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDl4l-EeKURJ5ZIzgaXg" name="id" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDmIl-EeKURJ5ZIzgaXg" name="name" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDmYl-EeKURJ5ZIzgaXg" name="references" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDmol-EeKURJ5ZIzgaXg" name="description" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDnIl-EeKURJ5ZIzgaXg" name="tools To Apply" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDm4l-EeKURJ5ZIzgaXg" name="its Test Family" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDnYl-EeKURJ5ZIzgaXg" name="characteristics" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDnol-EeKURJ5ZIzgaXg" name="IdentificationRule">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDn4l-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDoIl-EeKURJ5ZIzgaXg" name="id" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDool-EeKURJ5ZIzgaXg" name="component Kind" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDoYl-EeKURJ5ZIzgaXg" name="timing Kind" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDo4l-EeKURJ5ZIzgaXg" name="rule" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDpIl-EeKURJ5ZIzgaXg" name="rule Context" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDpYl-EeKURJ5ZIzgaXg" name="description" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDpol-EeKURJ5ZIzgaXg" name="Tool">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDp4l-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDqIl-EeKURJ5ZIzgaXg" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDqYl-EeKURJ5ZIzgaXg" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDqol-EeKURJ5ZIzgaXg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDq4l-EeKURJ5ZIzgaXg" name="location of MoSaRT to Tool transformation program" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDrIl-EeKURJ5ZIzgaXg" name="location of Tool to MoSaRT transformation program" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDrYl-EeKURJ5ZIzgaXg" name="TestFamily">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDrol-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDr4l-EeKURJ5ZIzgaXg" name="name" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDsIl-EeKURJ5ZIzgaXg" name="description" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDsYl-EeKURJ5ZIzgaXg" name="references" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDsol-EeKURJ5ZIzgaXg" name="contained Tests" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDs4l-EeKURJ5ZIzgaXg" name="GeneralizationRelationship">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDtIl-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDtYl-EeKURJ5ZIzgaXg" name="name" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDtol-EeKURJ5ZIzgaXg" name="description" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDt4l-EeKURJ5ZIzgaXg" name="specific Model" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDuIl-EeKURJ5ZIzgaXg" name="generic Model" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDuYl-EeKURJ5ZIzgaXg" name="behavior Kind" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDuol-EeKURJ5ZIzgaXg" name="location of generic to specific model transformation program" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDu4l-EeKURJ5ZIzgaXg" name="location of specific to generic model transformation program" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDvIl-EeKURJ5ZIzgaXg" name="Deadline_Sustainability">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDvYl-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDwIl-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDv4l-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDwYl-EeKURJ5ZIzgaXg" name="Jitter_Sustainability">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDwol-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDxYl-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDxIl-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDxol-EeKURJ5ZIzgaXg" name="Period_Sustainability">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDx4l-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDyYl-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDyol-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXDy4l-EeKURJ5ZIzgaXg" name="ExecutionTime_Sustainability">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXDzIl-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDzol-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXDz4l-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXD0Il-EeKURJ5ZIzgaXg" name="SufficientCondition">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXD0Yl-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXD1Il-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXD04l-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_6zXD1Yl-EeKURJ5ZIzgaXg" name="NecessaryCondition">
+        <elements xsi:type="eef-views:Container" xmi:id="_6zXD1ol-EeKURJ5ZIzgaXg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXD2Il-EeKURJ5ZIzgaXg" name="comment" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_6zXD2Yl-EeKURJ5ZIzgaXg" name="contexts" nameAsLabel="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

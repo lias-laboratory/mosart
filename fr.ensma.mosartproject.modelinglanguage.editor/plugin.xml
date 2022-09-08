@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="MoSaRT.presentation.MoSaRTModelWizardID"
+            name="%_UI_MoSaRTModelWizard_label"
+            class="MoSaRT.presentation.MoSaRTModelWizard"
+            category="fr.ensma.mosart.modelinglanguage.category"
+            icon="icons/full/wizban/NewMoSaRT.gif">
+         <description>%_UI_MoSaRTModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated MoSaRT -->
+      <editor
+            id="MoSaRT.FunctionalElements.presentation.FunctionalElementsEditorID"
+            name="%_UI_FunctionalElementsEditor_label"
+            icon="icons/full/obj16/FunctionalElementsModelFile.gif"
+            extensions="functionalelements"
+            class="MoSaRT.FunctionalElements.presentation.FunctionalElementsEditor"
+            contributorClass="MoSaRT.FunctionalElements.presentation.FunctionalElementsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated MoSaRT -->
+      <editor
+            id="MoSaRT.SoftwarePlatform.SoftwareBehavior.presentation.SoftwareBehaviorEditorID"
+            name="%_UI_SoftwareBehaviorEditor_label"
+            icon="icons/full/obj16/SoftwareBehaviorModelFile.gif"
+            extensions="softwarebehavior"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehavior.presentation.SoftwareBehaviorEditor"
+            contributorClass="MoSaRT.SoftwarePlatform.SoftwareBehavior.presentation.SoftwareBehaviorActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.HardwarePlatform.presentation.HardwarePlatformModelWizardID"
+            name="%_UI_HardwarePlatformModelWizard_label"
+            class="MoSaRT.HardwarePlatform.presentation.HardwarePlatformModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HardwarePlatformModelFile.gif">
+         <description>%_UI_HardwarePlatformModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.presentation.MoSaRTEditorID"
+            name="%_UI_MoSaRTEditor_label"
+            icon="icons/full/obj16/MoSaRTModelFile.gif"
+            extensions="mosart"
+            class="MoSaRT.presentation.MoSaRTEditor"
+            contributorClass="MoSaRT.presentation.MoSaRTActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsModelWizardID"
+            name="%_UI_SoftwareOperatorsModelWizard_label"
+            class="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SoftwareOperatorsModelFile.gif">
+         <description>%_UI_SoftwareOperatorsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsModelWizardID"
+            name="%_UI_SoftwareOperatorsModelWizard_label"
+            class="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SoftwareOperatorsModelFile.gif">
+         <description>%_UI_SoftwareOperatorsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsEditorID"
+            name="%_UI_SoftwareOperatorsEditor_label"
+            icon="icons/full/obj16/SoftwareOperatorsModelFile.gif"
+            extensions="softwareoperators"
+            class="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsEditor"
+            contributorClass="MoSaRT.SoftwarePlatform.SoftwareOperators.presentation.SoftwareOperatorsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.SoftwarePlatform.SoftwareBehavior.presentation.SoftwareBehaviorModelWizardID"
+            name="%_UI_SoftwareBehaviorModelWizard_label"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehavior.presentation.SoftwareBehaviorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SoftwareBehaviorModelFile.gif">
+         <description>%_UI_SoftwareBehaviorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.SoftwarePlatform.SoftwareBehaviour.presentation.SoftwareBehaviourModelWizardID"
+            name="%_UI_SoftwareBehaviourModelWizard_label"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehaviour.presentation.SoftwareBehaviourModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SoftwareBehaviourModelFile.gif">
+         <description>%_UI_SoftwareBehaviourModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.SoftwarePlatform.SoftwareBehaviour.presentation.SoftwareBehaviourEditorID"
+            name="%_UI_SoftwareBehaviourEditor_label"
+            icon="icons/full/obj16/SoftwareBehaviourModelFile.gif"
+            extensions="softwarebehaviour"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehaviour.presentation.SoftwareBehaviourEditor"
+            contributorClass="MoSaRT.SoftwarePlatform.SoftwareBehaviour.presentation.SoftwareBehaviourActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.HardwarePlatform.presentation.HardwarePlatformModelWizardID"
+            name="%_UI_HardwarePlatformModelWizard_label"
+            class="MoSaRT.HardwarePlatform.presentation.HardwarePlatformModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HardwarePlatformModelFile.gif">
+         <description>%_UI_HardwarePlatformModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.HardwarePlatform.presentation.HardwarePlatformEditorID"
+            name="%_UI_HardwarePlatformEditor_label"
+            icon="icons/full/obj16/HardwarePlatformModelFile.gif"
+            extensions="hardwareplatform"
+            class="MoSaRT.HardwarePlatform.presentation.HardwarePlatformEditor"
+            contributorClass="MoSaRT.HardwarePlatform.presentation.HardwarePlatformActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesModelWizardID"
+            name="%_UI_RtpTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpTypesModelFile.gif">
+         <description>%_UI_RtpTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesModelWizardID"
+            name="%_UI_RtpTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpTypesModelFile.gif">
+         <description>%_UI_RtpTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesEditorID"
+            name="%_UI_RtpTypesEditor_label"
+            icon="icons/full/obj16/RtpTypesModelFile.gif"
+            extensions="rtptypes"
+            class="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesEditor"
+            contributorClass="MoSaRT.RealTimeProperties.RtpTypes.presentation.RtpTypesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesModelWizardID"
+            name="%_UI_RtpUtilityTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpUtilityTypesModelFile.gif">
+         <description>%_UI_RtpUtilityTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesModelWizardID"
+            name="%_UI_RtpUtilityTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpUtilityTypesModelFile.gif">
+         <description>%_UI_RtpUtilityTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesEditorID"
+            name="%_UI_RtpUtilityTypesEditor_label"
+            icon="icons/full/obj16/RtpUtilityTypesModelFile.gif"
+            extensions="rtputilitytypes"
+            class="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesEditor"
+            contributorClass="MoSaRT.RealTimeProperties.RtpUtilityTypes.presentation.RtpUtilityTypesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesModelWizardID"
+            name="%_UI_RtpHelperTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpHelperTypesModelFile.gif">
+         <description>%_UI_RtpHelperTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesModelWizardID"
+            name="%_UI_RtpHelperTypesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpHelperTypesModelFile.gif">
+         <description>%_UI_RtpHelperTypesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesEditorID"
+            name="%_UI_RtpHelperTypesEditor_label"
+            icon="icons/full/obj16/RtpHelperTypesModelFile.gif"
+            extensions="rtphelpertypes"
+            class="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesEditor"
+            contributorClass="MoSaRT.RealTimeProperties.RtpHelperTypes.presentation.RtpHelperTypesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesModelWizardID"
+            name="%_UI_RtpProtocolsAndPoliciesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpProtocolsAndPoliciesModelFile.gif">
+         <description>%_UI_RtpProtocolsAndPoliciesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesModelWizardID"
+            name="%_UI_RtpProtocolsAndPoliciesModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpProtocolsAndPoliciesModelFile.gif">
+         <description>%_UI_RtpProtocolsAndPoliciesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesEditorID"
+            name="%_UI_RtpProtocolsAndPoliciesEditor_label"
+            icon="icons/full/obj16/RtpProtocolsAndPoliciesModelFile.gif"
+            extensions="rtpprotocolsandpolicies"
+            class="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesEditor"
+            contributorClass="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.presentation.RtpProtocolsAndPoliciesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsModelWizardID"
+            name="%_UI_RtpComputationAndAnalysisFunctionsModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpComputationAndAnalysisFunctionsModelFile.gif">
+         <description>%_UI_RtpComputationAndAnalysisFunctionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsModelWizardID"
+            name="%_UI_RtpComputationAndAnalysisFunctionsModelWizard_label"
+            class="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RtpComputationAndAnalysisFunctionsModelFile.gif">
+         <description>%_UI_RtpComputationAndAnalysisFunctionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsEditorID"
+            name="%_UI_RtpComputationAndAnalysisFunctionsEditor_label"
+            icon="icons/full/obj16/RtpComputationAndAnalysisFunctionsModelFile.gif"
+            extensions="rtpcomputationandanalysisfunctions"
+            class="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsEditor"
+            contributorClass="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.presentation.RtpComputationAndAnalysisFunctionsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MoSaRT -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.FunctionalElements.presentation.FunctionalElementsModelWizardID"
+            name="%_UI_FunctionalElementsModelWizard_label"
+            class="MoSaRT.FunctionalElements.presentation.FunctionalElementsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FunctionalElementsModelFile.gif">
+         <description>%_UI_FunctionalElementsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.FunctionnalModel.presentation.FunctionnalModelModelWizardID"
+            name="%_UI_FunctionnalModelModelWizard_label"
+            class="MoSaRT.FunctionnalModel.presentation.FunctionnalModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FunctionnalModelModelFile.gif">
+         <description>%_UI_FunctionnalModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.FunctionnalModel.presentation.FunctionnalModelEditorID"
+            name="%_UI_FunctionnalModelEditor_label"
+            icon="icons/full/obj16/FunctionnalModelModelFile.gif"
+            extensions="functionnalmodel"
+            class="MoSaRT.FunctionnalModel.presentation.FunctionnalModelEditor"
+            contributorClass="MoSaRT.FunctionnalModel.presentation.FunctionnalModelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRT.FunctionnalModel.uml.presentation.UmlModelWizardID"
+            name="%_UI_UmlModelWizard_label"
+            class="MoSaRT.FunctionnalModel.uml.presentation.UmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UmlModelFile.gif">
+         <description>%_UI_UmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRT.FunctionnalModel.uml.presentation.UmlEditorID"
+            name="%_UI_UmlEditor_label"
+            icon="icons/full/obj16/UmlModelFile.gif"
+            extensions="uml"
+            class="MoSaRT.FunctionnalModel.uml.presentation.UmlEditor"
+            contributorClass="MoSaRT.FunctionnalModel.uml.presentation.UmlActionBarContributor">
+      </editor>
+   </extension>
+   
+   <!-- contribute onglet Semantic to TreeItem--> 
+<!-- declaration d'une nouvelle category-->
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+	<propertyContributor 
+		labelProvider="org.eclipse.sirius.diagram.ui.internal.sheet.SiriusSheetLabelProvider" 
+		contributorId="org.eclipse.sirius.tree.ui.EditorID">
+	<propertyCategory category="semantic1"> 
+	</propertyCategory>
+</propertyContributor>
+<!-- contribution de-->
+</extension>
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	<propertyTabs contributorId="org.eclipse.sirius.tree.ui.EditorID">
+		<propertyTab 
+			id="property.tab.semantic.extension" 
+			category="semantic1" label="semantic"> 
+		</propertyTab>
+	</propertyTabs>
+</extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+<propertySections contributorId="org.eclipse.sirius.tree.ui.EditorID">
+	<propertySection 
+		id="property.section.semantic.extension"
+		class="org.eclipse.sirius.diagram.ui.tools.internal.properties.SemanticAndExtensionPropertySection" 
+		tab="property.tab.semantic.extension" 
+		filter="org.eclipse.sirius.diagram.ui.tools.internal.properties.filter.SemanticExtensionPropertyFilter">
+	<input type="org.eclipse.gmf.runtime.notation.View"> </input>
+	<input type="org.eclipse.gef.EditPart"> </input>
+	</propertySection>
+</propertySections>
+</extension>
+</plugin>
+

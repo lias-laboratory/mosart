@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="fr.ensma.mosartproject.modelinglanguage/src" editDirectory="fr.ensma.mosartproject.modelinglanguage.edit/src"
+    editorDirectory="fr.ensma.mosartproject.modelinglanguage.editor/src" modelPluginID="fr.ensma.mosartproject.modelinglanguage"
+    modelName="MoSaRT" modelPluginClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="fr.ensma.mosartproject.modelinglanguage.edit"
+    editorPluginID="fr.ensma.mosartproject.modelinglanguage.editor" language="" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true">
+  <foreignModel>MoSaRT.ecore</foreignModel>
+  <modelPluginVariables>OCL_ECORE=org.eclipse.ocl.ecore</modelPluginVariables>
+  <genPackages prefix="MoSaRT" contentTypeIdentifier="" fileExtensions="msrtDM" ecorePackage="MoSaRT.ecore#/">
+    <genClasses ecoreClass="MoSaRT.ecore#//GlobalSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//GlobalSystem/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//GlobalSystem/softwareSide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//GlobalSystem/hardwareSide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//GlobalSystem/functionalSide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//GlobalSystem/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//GlobalSystem/analysisRepositoryLocation"/>
+    </genClasses>
+    <nestedGenPackages prefix="SoftwarePlatform" basePackage="MoSaRT" disposableProviderFactory="true"
+        ecorePackage="MoSaRT.ecore#//SoftwarePlatform">
+      <nestedGenPackages prefix="SoftwareOperators" basePackage="MoSaRT.SoftwarePlatform"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators">
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide/systemBehavior"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide/spaceProcesses"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide/interactionResources"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide/schedulableTasks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide/name"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/process"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/mutualExclusionResources"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/commWritingResources"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/commReadingResources"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/name"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/mutualExclusionResourceUtilization"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/favoriteProcessors"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/runOnProcessors"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/representedActivity"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/rtpMutualExclusionResourceUtilization"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/spaceProcessParent"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/spaceProcessChildren"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/schedulableTasks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/name"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/processingUnit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/rtpSchedulingPolicy"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/allSpaceProcessParents"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/rtpTaskAllocation"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoInteractionResource"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource/tasks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource/rtpProtectProtocol"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource/rtpWaitingQueuePolicy"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource/writerTasks"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource/readerTasks"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoRemoteCommResource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoRemoteCommResource/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoRemoteCommResource/transmittedData"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoLocalCommResource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoLocalCommResource/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoLocalCommResource/rtpCommunicationMechanism"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoLocalCommResource/rtpWaitingQueuePolicy"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoLocalCommResource/rtpProtectProtocol"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData/sourceTask"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData/targetTasks"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData/name"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData/dataSize"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareOperators/SoTransmittedData/rtpDataSize"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="SoftwareBehavior" basePackage="MoSaRT.SoftwarePlatform"
+          resource="XML" disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior">
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior/triggers"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior/schedulingActivities"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior/sequencingRelations"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior/rootTrigger"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior/name"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTrigger">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTrigger/schedulingActivities"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTrigger/name"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTimeTrigger">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTimeTrigger/rtpReleaseTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTimeTrigger/rtpPeriodicity"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTimeTrigger/startTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTimeTrigger/periodicity"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbExternalEventTrigger"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/trigger"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/name"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/inputSquencingRelation"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/outputSequencingRelation"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/actionSteps"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rootActionStep"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/stepPrecedenceRelations"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpDeadline"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpExecutionTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpOffset"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpBlockingTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpRepetition"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpResponseTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpPriority"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/representedTask"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/repetition"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/deadline"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/executionTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/blockingTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/priority"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/responseTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/offset"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpCriticality"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpPreemptibility"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/rtpSelfSuspension"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbPrecedenceRelation"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation/name"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation/targetSchedulingActivity"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation/sourceSchedulingActivity"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbCommunicationRelation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbCommunicationRelation/commResource"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/inputStepRelation"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/outputStepRelation"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/rtpDeadline"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/rtpExecutionTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/rtpBlockingTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/rtpRepetition"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/representedOperation"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/repetition"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/deadline"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/executionTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/blockingTime"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/interactionResource"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStep/stepPredecessors"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbAcquireStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbSendStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbReceiveStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbWriteStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbReleaseStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbReadStep"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation/targetStep"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation/sourceStep"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation/name"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//SoftwarePlatform/SoftwareBehavior/SbActionStep"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="HardwarePlatform" basePackage="MoSaRT" disposableProviderFactory="true"
+        ecorePackage="MoSaRT.ecore#//HardwarePlatform">
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/processingUnits"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/commRouters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/commChannels"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/processorInterconnectors"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/SystemHardwareSide/hpflowcarrier"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/commChannel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/rtpUtilizationFactor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/spaceProcesses"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/candidateTasks"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/schedulableTasks"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/utilizationFactor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/processorInterconnector"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessingUnit/rtpComputingSpeed"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/hpNetworkNodeTargets"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/ServiceCurveFunction"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/TrafficShaperFunction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/processingUnitOrigin"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpFlowCarrier/rtpCommunicationArbitrationPolicy"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpCommunicationRouter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpCommunicationRouter/networkPorts"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpCommunicationRouter/name"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpNetworkPort">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/commChannel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/rtpFlowRate"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/flowRate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/rtpNetworkProtocol"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpNetworkPort/rtpTransmissionMode"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel/processingUnits"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel/networkPort"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel/processingUnitSet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpCommunicationChannel/networkNodeSet"/>
+      </genClasses>
+      <genClasses ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpProcessorInterconnector">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessorInterconnector/processingUnits"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessorInterconnector/commChannel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//HardwarePlatform/HpProcessorInterconnector/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//HardwarePlatform/HpProcessorInterconnector/rtpMultiprocessorCategory"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="MoSaRT.ecore#//HardwarePlatform/HpNetworkNode"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="RealTimeProperties" basePackage="MoSaRT" disposableProviderFactory="true"
+        ecorePackage="MoSaRT.ecore#//RealTimeProperties">
+      <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RealTimeCommonType"/>
+      <nestedGenPackages prefix="RtpTypes" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpTypes">
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPriorityType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPriorityType/value"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPeriodicityType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPeriodicType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPeriodicType/jitter"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPeriodicType/period"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpAperiodicType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpSporadicType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpSporadicType/interArrival"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpReleaseTimeType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpReleaseTimeType/releaseTime"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpReleaseTimeType/referring"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpOffsetType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpOffsetType/offset"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType/timeUtilization"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType/specialAccessPriority"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType/resource"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpDeadlineType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpDeadlineType/deadline"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpResponseTimeType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpResponseTimeType/responseTime"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpBlockingTimeType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpBlockingTimeType/blockingTime"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpRepetitionType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpRepetitionType/repetition"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpFlowRateType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpFlowRateType/flowRate"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpUtilizationFactorType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpUtilizationFactorType/U"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/greater/otherExecutionTime"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/lower/otherExecutionTime"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/equals/otherExecutionTime"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/convertsTo/unit"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpExecutionTimeType/adoptsCalculatedValue"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpCriticalityType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpCriticalityType/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpComputingSpeedType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpComputingSpeedType/computingSpeed"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPreemptibilityType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPreemptibleType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpPreemptibleType/cost"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpNonPreemptibleType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpCooperativeType">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpCooperativeType/nonPreemptibleSteps"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpCooperativeType/nonPreemptibleIntervals"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpSelfSuspensionType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpSelfSuspendedType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpSelfSuspendedType/selfSuspensionTime"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpTypes/RtpNotSelfSuspendedType"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="RtpUtilityTypes" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/DelimiterType">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/DelimiterType/open"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/DelimiterType/closed"/>
+        </genEnums>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerMatrix">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerMatrix/matrixElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerVector">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerVector/vectorElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealVector">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealVector/vectorElements"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealVector/maxValue"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealMatrix">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealMatrix/matrixElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerSet">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerSet/setElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerList">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerList/listElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealSet">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealSet/setElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealList">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealList/listElements"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerInterval">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerInterval/delimiterMin"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerInterval/boundMin"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerInterval/boundMax"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerInterval/delimiterMax"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealInterval">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealInterval/delimiterMin"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealInterval/boundMin"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealInterval/boundMax"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealInterval/delimiterMax"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/RealVariable"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredReal">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredReal/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredReal/unknownValueName"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredReal/toolUsedDescriptions"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredReal/allOldValues"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/UnknownReal">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/UnknownReal/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/SimpleReal">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/SimpleReal/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal/minValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal/avgValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal/maxValue"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/IntegerVariable"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredInteger">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredInteger/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredInteger/unknownValueName"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredInteger/toolUsedDescriptions"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MeasuredInteger/allOldValues"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/UnknownInteger">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/UnknownInteger/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/SimpleInteger">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/SimpleInteger/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgInteger">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgInteger/minValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgInteger/avgValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgInteger/maxValue"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="RtpMeasurementUnits" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/us"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/ms"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/s"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/min"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/hr"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/TimeUnits/day"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits/bit"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits/Byte"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits/KB"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits/MB"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits/GB"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/PowerUnits">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/PowerUnits/w"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/PowerUnits/Kw"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/PowerUnits/Mw"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/PowerUnits/Gw"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits/b_per_s"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits/Kb_per_s"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits/Mb_per_s"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits/Gb_per_s"/>
+        </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits/Hz"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits/KHz"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits/MHz"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits/GHz"/>
+        </genEnums>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="RtpHelperTypes" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpScheduleLinkType">
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpScheduleLinkType/after_the_beginning_of"/>
+          <genEnumLiterals ecoreEnumLiteral="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpScheduleLinkType/after_the_end_of"/>
+        </genEnums>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/greater/otherDuration"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/lower/otherDuration"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/equals/otherDuration"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDurationType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/greater/otherInterArrival"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/lower/otherInterArrival"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/equals/otherInterArrival"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/greater/otherDataRate"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/lower/otherDataRate"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/equals/otherDataRate"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataRateType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/greater/otherPower"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/lower/otherPower"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/equals/otherPower"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpPowerType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/greater/otherDataSize"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/lower/otherDataSize"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/equals/otherDataSize"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/unit"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/value"/>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/greater">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/greater/otherFrequency"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/lower">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/lower/otherFrequency"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/equals">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/equals/otherFrequency"/>
+          </genOperations>
+          <genOperations ecoreOperation="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/convertsTo">
+            <genParameters ecoreParameter="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType/convertsTo/unit"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValue"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeList">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeList/vector"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeSimple">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeSimple/value"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeMma">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeMma/minMaxAvg"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeInterval">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeInterval/interval"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeLinkType">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeLinkType/scheduleLink"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeLinkType/jobNumber"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeLinkType/referenceActivity"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpReferenceType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeReferenceType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpTimeReferenceType/timeLink"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpClockRefrenceType"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValueToBeCalculated">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValueToBeCalculated/unknownValueName"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValueToBeCalculated/FunctionToBeRequested"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeCalculatedValue">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeCalculatedValue/unknownValueName"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeCalculatedValue/toolUsedDescriptions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeCalculatedValue/value"/>
+          <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeCalculatedValue/allOldValues"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="RtpProtocolsAndPolicies" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies">
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType/protocolType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/PIPProtectProtocol"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/PCPProtectProtocol"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType/policyType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FIFOCommunicationArbitrationPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FixedPriorityCommunicationArbitrationPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/LIFOCommunicationArbitrationPolicy"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType/policyType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FIFOWaitingQueuePolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/LIFOWaitingQueuePolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/PriorityWaitingQueuePolicy"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType/protocolType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/CANNetworkProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/AFDXNetworkProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/ATMNetworkProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FIPNetworkProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FDDINetworkProtocol"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType/policyType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FixedPrioritySchedulingPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/LeastLaxityFirstSchedulingPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RoundRobinSchedulingPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/EarliestDeadlineFirstSchedulingPolicy"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType/RtpDataSize"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType/mechanismType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/PipeCommunicationMechanism"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/DataQueueCommunicationMechanism">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/DataQueueCommunicationMechanism/overwriting"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType/modeType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FullDuplexTransmissionMode"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/HalfDuplexTransmissionMode"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/SimpleTransmissionMode"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/ICPPProtectProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/OCPPProtectProtocol"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/DeadlineMonotonicSchedulingPolicy"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RateMonotonicSchedulingPolicy"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType/AllocationType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/PartitionedTaskAllocation"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/FullMigrationTaskAllocation"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RestrictedMigrationTaskAllocation"/>
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType/categoryType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/HeterogenousMultiprocessorCategory"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/HomogeneousMultiprocessorCategory"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpProtocolsAndPolicies/UniformMultiprocessorCategory"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="RtpComputationAndAnalysisFunctions" basePackage="MoSaRT.RealTimeProperties"
+          disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions">
+        <genClasses image="false" ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpComputationFunction">
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpComputationFunction/functionType"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/WeibullComputationFunction">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/WeibullComputationFunction/parameters"/>
+        </genClasses>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpAnalysisFunction"/>
+        <genClasses ecoreClass="MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction/Intervals"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction/MultiplicationCoefficient"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction/XUnit"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction/YUnit"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="FunctionalElements" basePackage="MoSaRT" resource="XML"
+        disposableProviderFactory="true" ecorePackage="MoSaRT.ecore#//FunctionalElements">
+      <genClasses ecoreClass="MoSaRT.ecore#//FunctionalElements/SystemFunctionalSide">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRT.ecore#//FunctionalElements/SystemFunctionalSide/umlModel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRT.ecore#//FunctionalElements/SystemFunctionalSide/name"/>
+        <genOperations ecoreOperation="MoSaRT.ecore#//FunctionalElements/SystemFunctionalSide/importUmlModel">
+          <genParameters ecoreParameter="MoSaRT.ecore#//FunctionalElements/SystemFunctionalSide/importUmlModel/importedModel"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

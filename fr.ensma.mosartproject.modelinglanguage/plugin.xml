@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT"
+            class="MoSaRT.provider.MoSaRTItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareOperators"
+            class="MoSaRT.SoftwarePlatform.SoftwareOperators.provider.SoftwareOperatorsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareBehavior"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehavior.provider.SoftwareBehaviorItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/HardwarePlatform"
+            class="MoSaRT.HardwarePlatform.provider.HardwarePlatformItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties"
+            class="MoSaRT.RealTimeProperties.provider.RealTimePropertiesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpTypes"
+            class="MoSaRT.RealTimeProperties.RtpTypes.provider.RtpTypesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpUtilityTypes"
+            class="MoSaRT.RealTimeProperties.RtpUtilityTypes.provider.RtpUtilityTypesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpHelperTypes"
+            class="MoSaRT.RealTimeProperties.RtpHelperTypes.provider.RtpHelperTypesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpProtocolsAndPolicies"
+            class="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.provider.RtpProtocolsAndPoliciesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpComputationAndAnalysisFunctions"
+            class="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.provider.RtpComputationAndAnalysisFunctionsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRT/FunctionalElements"
+            class="MoSaRT.FunctionalElements.provider.FunctionalElementsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT"
+            class="MoSaRT.MoSaRTPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareOperators"
+            class="MoSaRT.SoftwarePlatform.SoftwareOperators.SoftwareOperatorsPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareBehavior"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehavior.SoftwareBehaviorPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated MoSaRT -->
+      <parser
+            type="softwarebehavior"
+            class="MoSaRT.SoftwarePlatform.SoftwareBehavior.util.SoftwareBehaviorResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/HardwarePlatform"
+            class="MoSaRT.HardwarePlatform.HardwarePlatformPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties"
+            class="MoSaRT.RealTimeProperties.RealTimePropertiesPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpTypes"
+            class="MoSaRT.RealTimeProperties.RtpTypes.RtpTypesPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpUtilityTypes"
+            class="MoSaRT.RealTimeProperties.RtpUtilityTypes.RtpUtilityTypesPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpMeasurementUnits"
+            class="MoSaRT.RealTimeProperties.RtpMeasurementUnits.RtpMeasurementUnitsPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpHelperTypes"
+            class="MoSaRT.RealTimeProperties.RtpHelperTypes.RtpHelperTypesPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpProtocolsAndPolicies"
+            class="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies.RtpProtocolsAndPoliciesPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpComputationAndAnalysisFunctions"
+            class="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions.RtpComputationAndAnalysisFunctionsPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ensma.fr/MoSaRT/FunctionalElements"
+            class="MoSaRT.FunctionalElements.FunctionalElementsPackage"
+            genModel="model/MoSaRT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated MoSaRT -->
+      <parser
+            type="functionalelements"
+            class="MoSaRT.FunctionalElements.util.FunctionalElementsResourceFactoryImpl"/>
+   </extension>
+</plugin>

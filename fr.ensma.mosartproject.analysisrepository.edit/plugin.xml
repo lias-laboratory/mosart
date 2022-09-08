@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRTBackEnd/AnalysisRepository"
+            class="MoSaRTBackEnd_AnalysisRepository.provider.MoSaRTBackEnd_AnalysisRepositoryItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+   
+   
+          
+          <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ensma.fr/MoSaRTBackEnd/AnalysisRepository"
+            class="MoSaRTBackEnd_AnalysisRepository.providers.MoSaRTBackEnd_AnalysisRepositoryEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="MoSaRTBackEnd_AnalysisRepository.providers.MoSaRTBackEnd_AnalysisRepositoryPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="fr.obeo.dsl.viewpoint.diagram"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="fr.obeo.dsl.viewpoint.diagram">
+         <propertyTab
+               id="Base"
+               label="MoSaRT-BackEnd"
+               category="default">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="fr.obeo.dsl.viewpoint.diagram">
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.AnalysisRepositoryPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.AnalysisRepositoryPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.AnalysisRepository"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.ContextModelPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.ContextModelPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.ContextModel"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.GeneralizationRelationshipPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.GeneralizationRelationshipPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.GeneralizationRelationship"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.TestPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.TestPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.Test"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.IdentificationRulePropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.IdentificationRulePropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.IdentificationRule"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.ToolPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.ToolPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.Tool"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.TestFamilyPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.TestFamilyPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.TestFamily"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.GeneralizationRelationshipPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.GeneralizationRelationshipPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.GeneralizationRelationship"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.Deadline_SustainabilityPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.Deadline_SustainabilityPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.Deadline_Sustainability"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.Jitter_SustainabilityPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.Jitter_SustainabilityPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.Jitter_Sustainability"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.Period_SustainabilityPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.Period_SustainabilityPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.Period_Sustainability"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.ExecutionTime_SustainabilityPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.ExecutionTime_SustainabilityPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.ExecutionTime_Sustainability"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.SufficientConditionPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.SufficientConditionPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.SufficientCondition"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="MoSaRTBackEnd_AnalysisRepository.parts.forms.NecessaryConditionPropertiesEditionPartForm"
+               filter="MoSaRTBackEnd_AnalysisRepository.providers.NecessaryConditionPropertiesEditionProvider$EditionFilter"
+               id="MoSaRTBackEnd_AnalysisRepository.section.NecessaryCondition"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+  
+
+</plugin>

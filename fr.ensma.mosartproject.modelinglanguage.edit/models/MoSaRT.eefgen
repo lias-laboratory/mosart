@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/fr.ensma.MoSaRTProject.edit/src-gen">
+  <editionContexts basePackage="" descriptorsContributorID="fr.obeo.dsl.viewpoint.diagram" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bAD4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.SoftwarePlatform" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bKT4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.SoftwarePlatform" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bBD4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bcj4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bjD4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bjj4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3bqj4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3b4D4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3b4j4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3cAT4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT.RealTimeProperties" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3cOj4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <editionContexts basePackage="MoSaRT" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRT.components#_NZ3cPz4REeKtldgBRoKzEA"/>
+  </editionContexts>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpUtilityTypes" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3krT4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpComputationAndAnalysisFunctions" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3k9T4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.FunctionalElements" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3k-z4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.SoftwarePlatform.SoftwareOperators" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3lBD4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3lMD4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpTypes" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3uYT4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.HardwarePlatform" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3ujz4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3urz4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.SoftwarePlatform.SoftwareBehavior" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3usT4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpMeasurementUnits" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3vCD4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpProtocolsAndPolicies" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3vCj4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="MoSaRT.RealTimeProperties.RtpHelperTypes" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRT.components#_NZ3vXj4REeKtldgBRoKzEA"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

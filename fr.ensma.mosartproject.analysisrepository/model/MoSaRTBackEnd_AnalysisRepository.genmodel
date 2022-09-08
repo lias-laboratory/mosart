@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.ensma.MoSaRTProject.AnalysisRepository/src"
+    modelPluginID="fr.ensma.MoSaRTProject.AnalysisRepository" modelName="MoSaRTBackEnd_AnalysisRepository"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true">
+  <foreignModel>MoSaRTBackEnd_AnalysisRepository.ecore</foreignModel>
+  <genPackages prefix="MoSaRTBackEnd_AnalysisRepository" disposableProviderFactory="true"
+      fileExtensions="msrtAR" ecorePackage="MoSaRTBackEnd_AnalysisRepository.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRTBackEnd_AnalysisRepository.ecore#//TimingKindType">
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//TimingKindType/improving"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//TimingKindType/worsening"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//TimingKindType/indifferent"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRTBackEnd_AnalysisRepository.ecore#//ComponentKindType">
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//ComponentKindType/hardware"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//ComponentKindType/software"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRTBackEnd_AnalysisRepository.ecore#//BehaviorKindType">
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//BehaviorKindType/worstCaseBehavior"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//BehaviorKindType/bestCaseBehavior"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MoSaRTBackEnd_AnalysisRepository.ecore#//EvaluationResultType">
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//EvaluationResultType/True"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//EvaluationResultType/False"/>
+      <genEnumLiterals ecoreEnumLiteral="MoSaRTBackEnd_AnalysisRepository.ecore#//EvaluationResultType/Undefined"/>
+    </genEnums>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allGeneralizationRelationships"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allContextModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allRules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allTests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allTools"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/allTestFamilies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/mosartMetamodel"/>
+      <genOperations ecoreOperation="MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/appropriateModelsFinder">
+        <genParameters ecoreParameter="MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/appropriateModelsFinder/resultSummary"/>
+      </genOperations>
+      <genOperations ecoreOperation="MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/identificationRuleChecker">
+        <genParameters ecoreParameter="MoSaRTBackEnd_AnalysisRepository.ecore#//AnalysisRepository/identificationRuleChecker/root"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/references"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/trueValueRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/falseValueRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/undefinedValueRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//ContextModel/analysisTests"/>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Test/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Test/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Test/references"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Test/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//Test/itsTestFamily"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//Test/toolsToApply"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//Test/characteristics"/>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/timingKind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/componentKind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/rule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/ruleContext"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//IdentificationRule/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//Tool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/mosartToToolPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//Tool/toolToMosartPath"/>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/references"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//TestFamily/containedTests"/>
+    </genClasses>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/behaviorKind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/genericToSpecificPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//GeneralizationRelationship/specificToGenericPath"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/testValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MoSaRTBackEnd_AnalysisRepository.ecore#//TestCharacteristicType/contexts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//SustainabilityType"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//Deadline_Sustainability"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//Jitter_Sustainability"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//Period_Sustainability"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//ExecutionTime_Sustainability"/>
+    <genClasses image="false" ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//FeasibilityType"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//SufficientCondition"/>
+    <genClasses ecoreClass="MoSaRTBackEnd_AnalysisRepository.ecore#//NecessaryCondition"/>
+  </genPackages>
+</genmodel:GenModel>

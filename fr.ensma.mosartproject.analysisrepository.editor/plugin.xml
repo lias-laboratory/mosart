@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MoSaRTBackEnd_AnalysisRepository.presentation.MoSaRTBackEnd_AnalysisRepositoryModelWizardID"
+            name="%_UI_MoSaRTBackEnd_AnalysisRepositoryModelWizard_label"
+            class="MoSaRTBackEnd_AnalysisRepository.presentation.MoSaRTBackEnd_AnalysisRepositoryModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MoSaRTBackEnd_AnalysisRepositoryModelFile.gif">
+         <description>%_UI_MoSaRTBackEnd_AnalysisRepositoryModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="MoSaRTBackEnd_AnalysisRepository.presentation.MoSaRTBackEnd_AnalysisRepositoryEditorID"
+            name="%_UI_MoSaRTBackEnd_AnalysisRepositoryEditor_label"
+            icon="icons/full/obj16/MoSaRTBackEnd_AnalysisRepositoryModelFile.gif"
+            extensions="mosartbackend_analysisrepository"
+            class="MoSaRTBackEnd_AnalysisRepository.presentation.MoSaRTBackEnd_AnalysisRepositoryEditor"
+            contributorClass="MoSaRTBackEnd_AnalysisRepository.presentation.MoSaRTBackEnd_AnalysisRepositoryActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

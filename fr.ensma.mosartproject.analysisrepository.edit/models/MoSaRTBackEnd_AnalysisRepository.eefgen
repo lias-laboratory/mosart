@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/fr.ensma.MoSaRTProject.AnalysisRepository.edit/src-gen">
+  <editionContexts basePackage="" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="MoSaRTBackEnd_AnalysisRepository.components#_6zWcYYl-EeKURJ5ZIzgaXg"/>
+  </editionContexts>
+  <viewsRepositories basePackage="MoSaRTBackEnd_AnalysisRepository" swtViews="true" formViews="true">
+    <viewsRepository href="MoSaRTBackEnd_AnalysisRepository.components#_6zXDgol-EeKURJ5ZIzgaXg"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

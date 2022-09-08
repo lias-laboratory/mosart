@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="defaultpackage.Activator"
+               id="fr.ensma.mosartproject.modelinglanguage.design1"
+	       name="MoSaRT">
+    </component>
+  </extension>
+   
+   <extension
+         point="org.eclipse.sirius.componentization">
+      <component
+            class="fr.ensma.mosart.design.wizard.MoSaRTToolsDesignPlugin"
+            id="fr.ensma.mosartproject.modelinglanguage.design"
+            name="Domain Model">
+      </component>
+   </extension>
+   
+    	
+   <!-- Demo creation wizard-->
+   
+  	<!-- External Java Actions -->
+    <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="fr.ensma.mosartproject.import_and_export_services.UmlReplace"
+            id="fr.ensma.mosartproject.ExtensionServices.umlReplace">
+      </javaActions>
+   </extension>
+   
+     	<!-- External Java Actions --> 
+    <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="fr.ensma.mosartproject.import_and_export_services.UmlDelete"
+            id="fr.ensma.mosartproject.ExtensionServices.umlDelete">
+      </javaActions>
+   </extension>
+    <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="fr.ensma.mosartproject.import_and_export_services.UmlImporter1"
+            id="fr.ensma.mosartproject.ExtensionServices.umlImporter">
+      </javaActions>
+   </extension>
+    <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="fr.ensma.mosartproject.import_and_export_services.UmlExporter1"
+            id="fr.ensma.mosartproject.ExtensionServices.umlExporter">
+      </javaActions>
+   </extension>
+   
+   <!-- usable seulement dans Kepler
+       <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.eclipse.sirius.diagram">
+         <propertyTab
+               category="semantic &amp; extension"
+               id="BaseSemantic"
+               label="Semantic">
+         </propertyTab>
+      </propertyTabs>
+   </extension>-->
+   
+   
+       <extension
+             id="fr.ensma.mosart.commands"
+             name="MoSaRT commands"
+             point="org.eclipse.ui.commands">
+          <command
+                defaultHandler="fr.ensma.mosart.validation.MoSaRTDiagramValidation"
+                id="fr.ensma.mosart.commands.mosartValidation"
+                name="MoSaRT Diagram Validation">
+          </command>
+       </extension>
+       <extension
+             id="fr.ensma.mosart.menus"
+             point="org.eclipse.ui.menus">
+          <menuContribution
+                allPopups="false"
+                locationURI="toolbar:org.eclipse.ui.main.toolbar">
+             <toolbar
+                   id="fr.ensma.mosart.toolbar.mosartValidation1"
+                   label="MoSaRT Toolbar">
+                <command
+                      commandId="fr.ensma.mosart.commands.mosartValidation"
+                      icon="images/mosart1.png"
+                      label="MoSaRT Diagram Validation"
+                      style="push">
+                </command>
+             </toolbar>
+          </menuContribution>
+       </extension>
+</plugin>

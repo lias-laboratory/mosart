@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  	<!-- new MoSaRT Wizard-->  
+    <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="fr.ensma.mosart.modelinglanguage.category"
+            name="MoSaRT Framework">
+      </category>     
+      <wizard
+            category="fr.ensma.mosart.modelinglanguage.category"
+            class="fr.ensma.mosartproject.modelinglanguage.wizard.MosartWizard"
+            finalPerspective="fr.ensma.mosartproject.perspective"
+            icon="/images/mosart1.png"
+            id="fr.ensma.mosartproject.MosartWizard"
+            name="MoSaRT FrontEnd Modeling Project"
+            project="true">
+         <description>
+            Create a new Modeling project to specify a domain model using the MoSaRT Language
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+   <!-- Wizard End--> 
+</plugin>

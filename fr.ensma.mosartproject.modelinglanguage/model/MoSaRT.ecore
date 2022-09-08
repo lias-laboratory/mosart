@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MoSaRT" nsURI="http://www.ensma.fr/MoSaRT" nsPrefix="MoSaRT">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalSystem">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="GlobalSystemRuleTest"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="GlobalSystemRuleTest" value="self.name->notEmpty()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSide" eType="#//SoftwarePlatform/SoftwareOperators/SystemSoftwareSide"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareSide" eType="#//HardwarePlatform/SystemHardwareSide"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionalSide" eType="#//FunctionalElements/SystemFunctionalSide"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="analysisRepositoryLocation"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="SoftwarePlatform" nsURI="http://www.ensma.fr/MoSaRT/SoftwarePlatform"
+      nsPrefix="SP">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eSubpackages name="SoftwareOperators" nsURI="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareOperators"
+        nsPrefix="SO">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="SystemSoftwareSide">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SystemSoftwareSideRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SystemSoftwareSideRule1" value="self.systemBehaviour.sequencingRelations->select(r | r.oclIsTypeOf(SoftwareBehaviour::SbCommunicationRelation))->size() = SoTransmittedData.allInstances()->collect(td : SoTransmittedData | td.targetTasks)->size()->sum() + SoLocalCommResource.allInstances()->collect(rsc : SoLocalCommResource | rsc.readerTasks)->size()->sum()"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="systemBehavior" eType="#//SoftwarePlatform/SoftwareBehavior/GlobalBehavior"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="spaceProcesses" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interactionResources"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoInteractionResource"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableTasks" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoSchedulableTask">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoSchedulableTaskRule1 SoSchedulableTaskRule2 SoSchedulableTaskRule3 SoSchedulableTaskRule4 SoSchedulableTaskRule5"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SoSchedulableTaskRule1" value="self.rtpMutualExclusionResourceUtilization->size() = ( SoLocalCommResource.allInstances()->select(r : SoLocalCommResource | (self.commWritingResources->includes(r) or self.commReadingResources->includes(r) ) and r.rtpProtectProtocol->notEmpty())->size() + self.mutualExclusionResources->size() )"/>
+          <details key="SoSchedulableTaskRule2" value="self.rtpMutualExclusionResourceUtilization->size() = self.mutualExclusionResources->size() + self.commWritingResources->select(wr : SoCommunicationResource| wr.oclIsKindOf(SoLocalCommResource) and wr.oclAsType(SoLocalCommResource).rtpProtectProtocol->notEmpty() )->size() + self.commReadingResources->select(rr : SoCommunicationResource |rr.oclIsKindOf(SoLocalCommResource) and rr.oclAsType(SoLocalCommResource).rtpProtectProtocol->notEmpty())->size()"/>
+          <details key="SoSchedulableTaskRule3" value="self.rtpMutualExclusionResourceUtilization->collect(meru | meru.resource)->select(rsc|rsc.oclIsTypeOf(SoMutualExclusionResource))->includesAll(self.mutualExclusionResources)"/>
+          <details key="SoSchedulableTaskRule4" value="self.rtpMutualExclusionResourceUtilization->collect(meru | meru.resource)->select(rsc|rsc.oclIsTypeOf(SoCommunicationResource))->includesAll(self.commWritingResources->select(wr : SoCommunicationResource| wr.oclIsKindOf(SoLocalCommResource) and wr.oclAsType(SoLocalCommResource).rtpProtectProtocol->notEmpty()))"/>
+          <details key="SoSchedulableTaskRule5" value="self.rtpMutualExclusionResourceUtilization->collect(meru | meru.resource)->select(rsc|rsc.oclIsTypeOf(SoCommunicationResource))->includesAll(self.commReadingResources->select(rr : SoCommunicationResource |rr.oclIsKindOf(SoLocalCommResource) and rr.oclAsType(SoLocalCommResource).rtpProtectProtocol->notEmpty()))"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="process" lowerBound="1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/schedulableTasks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mutualExclusionResources"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoMutualExclusionResource/tasks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="commWritingResources"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource/writerTasks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="commReadingResources"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource/readerTasks"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mutualExclusionResourceUtilization"
+            upperBound="-1" eType="#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpMutualExclusionResourceUtilization"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="favoriteProcessors"
+            upperBound="-1" eType="#//HardwarePlatform/HpProcessingUnit" eOpposite="#//HardwarePlatform/HpProcessingUnit/candidateTasks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="runOnProcessors" upperBound="-1"
+            eType="#//HardwarePlatform/HpProcessingUnit" eOpposite="#//HardwarePlatform/HpProcessingUnit/schedulableTasks"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="representedActivity"
+            eType="#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity" eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbTaskActivity/representedTask"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpMutualExclusionResourceUtilization"
+            upperBound="-1" eType="#//RealTimeProperties/RtpTypes/RtpMutuExcluResourceUtilizationType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoSpaceProcess">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoSpaceProcessRule1 SoSpaceProcessRule2 SoSpaceProcessRule3 SoSpaceProcessRule4"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SoSpaceProcessRule1" value="(self.spaceProcessChildren->notEmpty() implies self.spaceProcessChildren->excludes(self)) and (self.spaceProcessParent->notEmpty() implies self.spaceProcessParent &lt;> self)"/>
+          <details key="SoSpaceProcessRule2" value="self.allSpaceProcessParents->excludesAll(self.spaceProcessChildren)"/>
+          <details key="SoSpaceProcessRule3" value="self.processingUnit->size()>1 implies self.processingUnit->forAll(pr1,pr2 | pr1&lt;>pr2 implies  pr1.processorInterconnector->notEmpty() and pr1.processorInterconnector = pr2.processorInterconnector)"/>
+          <details key="SoSpaceProcessRule4" value="(self.spaceProcessChildren->isEmpty() or self.spaceProcessParent->isEmpty()) implies self.processingUnit->notEmpty()"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="spaceProcessParent"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/spaceProcessChildren"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="spaceProcessChildren"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/spaceProcessParent"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableTasks" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/process"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnit" upperBound="-1"
+            eType="#//HardwarePlatform/HpProcessingUnit" eOpposite="#//HardwarePlatform/HpProcessingUnit/spaceProcesses"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpSchedulingPolicy"
+            lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allSpaceProcessParents"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess"
+            volatile="true" transient="true" derived="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpTaskAllocation"
+            eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoInteractionResource" abstract="true"
+          interface="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SoMutualExclusionResource" eSuperTypes="#//SoftwarePlatform/SoftwareOperators/SoInteractionResource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoMutualExclusionResourceRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SoMutualExclusionResourceRule1" value="self.tasks->forAll(t1,t2 | t1 &lt;> t2 implies t1.process = t2.process)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="2"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/mutualExclusionResources"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpProtectProtocol"
+            lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpWaitingQueuePolicy"
+            lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoCommunicationResource" abstract="true"
+          interface="true" eSuperTypes="#//SoftwarePlatform/SoftwareOperators/SoInteractionResource">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="writerTasks" lowerBound="1"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/commWritingResources"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="readerTasks" lowerBound="1"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask"
+            eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/commReadingResources"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoRemoteCommResource" eSuperTypes="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="transmittedData" lowerBound="1"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoTransmittedData"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoLocalCommResource" eSuperTypes="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoLocalCommResourceRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SoLocalCommResourceRule1" value="(self.oclAsType(SoCommunicationResource).writerTasks->union(self.oclAsType(SoCommunicationResource).readerTasks))->forAll(t1,t2 | t1 &lt;> t2 implies t1.process = t2.process)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpCommunicationMechanism"
+            lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpWaitingQueuePolicy"
+            lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpProtectProtocol"
+            eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SoTransmittedData">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SoTransmittedDataRule1 SoTransmittedDataRule2 SoTransmittedDataRule3 SoTransmittedDataRule4"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SoTransmittedDataRule1" value="self.targetTasks->excludes(self.sourceTask)"/>
+          <details key="SoTransmittedDataRule2" value="SoRemoteCommResource.allInstances()->forAll( rsc | rsc.transmittedData->includes(self) implies  rsc.oclAsType(SoCommunicationResource).readerTasks -> includesAll(self.targetTasks))"/>
+          <details key="SoTransmittedDataRule3" value="SoRemoteCommResource.allInstances()->forAll( rsc | rsc.transmittedData->includes(self) implies  rsc.oclAsType(SoCommunicationResource).writerTasks -> includes(self.sourceTask))"/>
+          <details key="SoTransmittedDataRule4" value="self.targetTasks->forAll( t : SoSchedulableTask | t.process->notEmpty() implies t.process &lt;> self.sourceTask.process)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sourceTask" lowerBound="1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="targetTasks" lowerBound="1"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataSize" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpDataSize"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpDataSize" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"
+            containment="true"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="SoftwareBehavior" nsURI="http://www.ensma.fr/MoSaRT/SoftwarePlatform/SoftwareBehavior"
+        nsPrefix="SB">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="GlobalBehavior">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="GlobalBehaviourRule1 GlobalBehaviourRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="GlobalBehaviourRule1" value="self.triggers->notEmpty() implies rootTrigger.oclAsSet()->notEmpty()"/>
+          <details key="GlobalBehaviourRule2" value="self.sequencingRelations->select(r | r.oclIsTypeOf(SbPrecedenceRelation))->forAll(pr1,pr2 | pr1 &lt;> pr2 and pr1.targetSchedulingActivity = pr2.sourceSchedulingActivity implies pr1.sourceSchedulingActivity &lt;> pr2. targetSchedulingActivity)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareBehavior/SbTrigger" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="schedulingActivities"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sequencingRelations"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rootTrigger" eType="#//SoftwarePlatform/SoftwareBehavior/SbTrigger"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbTrigger" abstract="true" interface="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="schedulingActivities"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/trigger"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbTimeTrigger" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbTrigger">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbTimeTriggerRule1 SbTimeTriggerRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbTimeTriggerRule1" value="GlobalBehaviour.allInstances()->forAll(gb | gb.rootTrigger = self implies self.rtpStartTime->isEmpty())"/>
+          <details key="SbTimeTriggerRule2" value="SbTimeTrigger.allInstances()->forAll(tt1 : SbTimeTrigger, tt2 : SbTimeTrigger | tt1.schedulingActivities->notEmpty() and tt1.rtpStartTime->notEmpty() and tt1.rtpStartTime.referring->notEmpty() and tt1.rtpStartTime.referring.oclIsTypeOf(RealTimeProperties::RtpHelperTypes::RtpTimeReferenceType) and tt1.rtpStartTime.referring.oclAsType (RealTimeProperties ::RtpHelperTypes::RtpTimeReferenceType).timeLink->notEmpty() and tt2.rtpStartTime ->notEmpty() and tt2.rtpStartTime.referring->notEmpty() and tt2.rtpStartTime.referring.oclIsTypeOf(RealTimeProperties::RtpHelperTypes::RtpTimeReferenceType) and  tt2.rtpStartTime. referring.oclAsType(RealTimeProperties::RtpHelperTypes:: RtpTimeReferenceType).timeLink->notEmpty() and tt1. schedulingActivities ->includes (tt2.rtpStartTime.referring.oclAsType(RealTimeProperties::RtpHelperTypes::RtpTimeReferenceType).timeLink.oclAsType(RealTimeProperties::RtpHelperTypes::RtpTimeLinkType).referenceActivity) implies tt2.schedulingActivities->excludes(tt1.rtpStartTime.referring.oclAsType(RealTimeProperties::RtpHelperTypes::RtpTimeReferenceType).timeLink.oclAsType(RealTimeProperties::RtpHelperTypes::RtpTimeLinkType).referenceActivity))&#xD;&#xA;"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpReleaseTime" eType="#//RealTimeProperties/RtpTypes/RtpReleaseTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpPeriodicity" eType="#//RealTimeProperties/RtpTypes/RtpPeriodicityType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="startTime" eType="#//RealTimeProperties/RtpTypes/RtpReleaseTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpStartTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="periodicity" eType="#//RealTimeProperties/RtpTypes/RtpPeriodicityType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpPeriodicity"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbExternalEventTrigger" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbTrigger"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SbSchedulingActivity" abstract="true"
+          interface="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="#//SoftwarePlatform/SoftwareBehavior/SbTrigger"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbTrigger/schedulingActivities"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="inputSquencingRelation"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation/targetSchedulingActivity"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outputSequencingRelation"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation/sourceSchedulingActivity"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbTaskActivity" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbTaskActivityRule1 SbTaskActivityRule2 SbTaskActivityRule3 SbTaskActivityRule4 SbTaskActivityRule5 SbTaskActivityRule6 SbTaskActivityRule7 SbTaskActivityRule8"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbTaskActivityRule1" value="self.oclAsType(SbSchedulingActivity).trigger->isEmpty() implies self.oclAsType(SbSchedulingActivity).inputSquencingRelation->notEmpty()"/>
+          <details key="SbTaskActivityRule2" value="(self.actionSteps->notEmpty() and (self.actionSteps->select(s| s.oclIsTypeOf(SbReleaseStep) or s.oclIsTypeOf(SbAcquireStep)) )-> size()>0)  implies ( (self.actionSteps->select(s| s.oclIsTypeOf(SbReleaseStep)))->size() = (self.actionSteps->select(s| s.oclIsTypeOf(SbAcquireStep)))->size() and (self.actionSteps->select(s| s.oclIsTypeOf(SbReleaseStep)))-> size() &lt;= self.representedTask.rtpMutualExclusionResourceUtilization->size())"/>
+          <details key="SbTaskActivityRule3" value="(self.actionSteps->notEmpty() and (self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbWriteStep)))->size()>0) implies ((self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbWriteStep)))->size() &lt;= (self.representedTask.commWritingResources->select(wr | wr.oclIsTypeOf(SoftwareOperators::SoLocalCommResource)))->size())"/>
+          <details key="SbTaskActivityRule4" value="(self.actionSteps->notEmpty() and (self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbReadStep)))->size()>0) implies ((self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbReadStep)))->size() &lt;= (self.representedTask.commReadingResources->select(rr :SoftwareOperators::SoCommunicationResource | rr.oclIsTypeOf(SoftwareOperators::SoLocalCommResource)))->size())"/>
+          <details key="SbTaskActivityRule5" value="(self.actionSteps->notEmpty() and (self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbSendStep)))->size()>0) implies ( (self.actionSteps->select(s : SbStep| s.oclIsTypeOf(SbSendStep)))->size() &lt;= (self.representedTask.commWritingResources->select(wr : SoftwareOperators::SoCommunicationResource| wr.oclIsTypeOf(SoftwareOperators::SoRemoteCommResource)))->size())"/>
+          <details key="SbTaskActivityRule6" value="( self.actionSteps->notEmpty() and (self.actionSteps->select(s : SbStep | s.oclIsTypeOf(SbReceiveStep)))->size()>0 ) implies ( (self.actionSteps->select(s| s.oclIsTypeOf(SbReceiveStep)))->size() &lt;= (self.representedTask.commReadingResources->select(rr:SoftwareOperators::SoCommunicationResource | rr.oclIsTypeOf(SoftwareOperators::SoRemoteCommResource)))->size())&#xD;&#xA;"/>
+          <details key="SbTaskActivityRule7" value="self.actionSteps->notEmpty() implies ( (self.actionSteps->select(gr : SbStep| gr.interactionResource->notEmpty())->collect(s : SbStep | s.interactionResource))->forAll(rsc:SoftwareOperators::SoInteractionResource | rsc.oclIsKindOf (SoftwareOperators::SoInteractionResource) implies self.representedTask.mutualExclusionResources->includes(rsc) or ( self.representedTask. commWritingResources->includes(rsc) or self.representedTask.commReadingResources->includes(rsc))) )"/>
+          <details key="SbTaskActivityRule8" value="self.actionSteps->select(s | s.oclIsTypeOf(SbAcquireStep) or s.oclIsTypeOf(SbReleaseStep))->forAll(a , b | a.oclIsTypeOf(SbAcquireStep) and b.oclIsTypeOf(SbReleaseStep) and a.oclAsType(SbStep).interactionResource = b.oclAsType(SbStep).interactionResource implies a.oclAsType(SbStep).stepPredecessors->excludes(b))"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="actionSteps" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareBehavior/SbStep" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rootActionStep" eType="#//SoftwarePlatform/SoftwareBehavior/SbStep"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stepPrecedenceRelations"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpDeadline" eType="#//RealTimeProperties/RtpTypes/RtpDeadlineType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpExecutionTime" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpOffset" eType="#//RealTimeProperties/RtpTypes/RtpOffsetType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpBlockingTime" eType="#//RealTimeProperties/RtpTypes/RtpBlockingTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpRepetition" eType="#//RealTimeProperties/RtpTypes/RtpRepetitionType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpResponseTime" eType="#//RealTimeProperties/RtpTypes/RtpResponseTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpPriority" eType="#//RealTimeProperties/RtpTypes/RtpPriorityType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="representedTask" lowerBound="1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/representedActivity"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="repetition" eType="#//RealTimeProperties/RtpTypes/RtpRepetitionType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpRepetition"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="#//RealTimeProperties/RtpTypes/RtpDeadlineType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpDeadline"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="executionTime" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpExecutionTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="blockingTime" eType="#//RealTimeProperties/RtpTypes/RtpBlockingTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpBlockingTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="#//RealTimeProperties/RtpTypes/RtpPriorityType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpPriority"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="responseTime" eType="#//RealTimeProperties/RtpTypes/RtpResponseTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpResponseTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="offset" eType="#//RealTimeProperties/RtpTypes/RtpOffsetType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpOffset"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpCriticality" eType="#//RealTimeProperties/RtpTypes/RtpCriticalityType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpPreemptibility"
+            lowerBound="1" eType="#//RealTimeProperties/RtpTypes/RtpPreemptibilityType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpSelfSuspension"
+            lowerBound="1" eType="#//RealTimeProperties/RtpTypes/RtpSelfSuspensionType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbPrecedenceRelation" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbPrecedenceRelationRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbPrecedenceRelationRule1" value="self.targetSchedulingActivity &lt;> self.sourceSchedulingActivity"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbSequencingRelation" abstract="true"
+          interface="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="targetSchedulingActivity"
+            lowerBound="1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/inputSquencingRelation"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSchedulingActivity"
+            lowerBound="1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity/outputSequencingRelation"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbCommunicationRelation" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbSequencingRelation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbCommunicationRelationRule1 SbCommunicationRelationRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbCommunicationRelationRule1" value="self.targetSchedulingActivity &lt;> self.sourceSchedulingActivity"/>
+          <details key="SbCommunicationRelationRule2" value="(self.commResource.writerTasks-> includes (self.oclAsType(SbSequencingRelation). sourceSchedulingActivity.oclAsType(SbTaskActivity).representedTask)) and (self.commResource.readerTasks->includes(self.oclAsType(SbSequencingRelation). targetSchedulingActivity.oclAsType(SbTaskActivity).representedTask))"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="commResource" lowerBound="1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoCommunicationResource"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbStep" abstract="true" interface="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="inputStepRelation"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation/targetStep"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outputStepRelation"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbStepPrecedenceRelation/sourceStep"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpDeadline" eType="#//RealTimeProperties/RtpTypes/RtpDeadlineType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpExecutionTime" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpBlockingTime" eType="#//RealTimeProperties/RtpTypes/RtpBlockingTimeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rtpRepetition" eType="#//RealTimeProperties/RtpTypes/RtpRepetitionType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="representedOperation"
+            eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="repetition" eType="#//RealTimeProperties/RtpTypes/RtpRepetitionType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpRepetition"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="#//RealTimeProperties/RtpTypes/RtpDeadlineType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpDeadline"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="executionTime" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpExecutionTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="blockingTime" eType="#//RealTimeProperties/RtpTypes/RtpBlockingTimeType"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.rtpBlockingTime"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interactionResource"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoInteractionResource"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stepPredecessors" upperBound="-1"
+            eType="#//SoftwarePlatform/SoftwareBehavior/SbStep" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+            <details key="derivation" value="self.inputStepRelation->collect(r : SbStepPrecedenceRelation | r.sourceStep)->collect(s : SbStep | s.stepPredecessors)->union(self.inputStepRelation->collect(r : SbStepPrecedenceRelation | r.sourceStep))"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbAcquireStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbAcquireStepRule1 SbAcquireStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbAcquireStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbAcquireStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoMutualExclusionResource)or (self.oclAsType(SbStep).interactionResource.oclIsTypeOf (SoftwareOperators::SoLocalCommResource)and self.oclAsType(SbStep). interactionResource .oclAsType(SoftwareOperators:: SoLocalCommResource). rtpProtectProtocol-> notEmpty())"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbSendStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbSendStepRule1 SbSendStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbSendStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbSendStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoRemoteCommResource)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbReceiveStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbReceiveStepRule1 SbReceiveStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbReceiveStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbReceiveStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoRemoteCommResource)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbWriteStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbWriteStepRule1 SbWriteStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbWriteStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbWriteStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoLocalCommResource)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbReleaseStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbReleaseStepRule1 SbReleaseStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbReleaseStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbReleaseStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoMutualExclusionResource) or (self.oclAsType(SbStep).interactionResource.oclIsTypeOf (SoftwareOperators::SoLocalCommResource)and self.oclAsType(SbStep). interactionResource.oclAsType(SoftwareOperators::SoLocalCommResource). rtpProtectProtocol -> notEmpty())"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbReadStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbReadStepRule1 SbReadStepRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbReadStepRule1" value="self.oclAsType(SbStep).interactionResource->notEmpty()"/>
+          <details key="SbReadStepRule2" value="self.oclAsType(SbStep).interactionResource.oclIsTypeOf(SoftwareOperators::SoLocalCommResource)"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbStepPrecedenceRelation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SbStepPrecedenceRelationRule1 SbStepPrecedenceRelationRule2"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="SbStepPrecedenceRelationRule1" value="self.sourceStep.oclIsTypeOf(SbAcquireStep) implies not self.targetStep.oclIsTypeOf(SbAcquireStep)"/>
+          <details key="SbStepPrecedenceRelationRule2" value="self.sourceStep.oclIsTypeOf(SbReleaseStep) implies not self.targetStep.oclIsTypeOf(SbReleaseStep)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="targetStep" eType="#//SoftwarePlatform/SoftwareBehavior/SbStep"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbStep/inputStepRelation"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sourceStep" eType="#//SoftwarePlatform/SoftwareBehavior/SbStep"
+            eOpposite="#//SoftwarePlatform/SoftwareBehavior/SbStep/outputStepRelation"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SbActionStep" eSuperTypes="#//SoftwarePlatform/SoftwareBehavior/SbStep"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="HardwarePlatform" nsURI="http://www.ensma.fr/MoSaRT/HardwarePlatform"
+      nsPrefix="HP">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemHardwareSide">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SystemHardwareSideRule1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="SystemHardwareSideRule1" value="self.processingUnits->size()>1 implies self.processingUnits->select(pr : HpProcessingUnit | pr.commChannel->isEmpty() and pr.processorInterconnector->isEmpty())->size()=0"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnits" upperBound="-1"
+          eType="#//HardwarePlatform/HpProcessingUnit" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="commRouters" upperBound="-1"
+          eType="#//HardwarePlatform/HpCommunicationRouter" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="commChannels" upperBound="-1"
+          eType="#//HardwarePlatform/HpCommunicationChannel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processorInterconnectors"
+          upperBound="-1" eType="#//HardwarePlatform/HpProcessorInterconnector" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hpflowcarrier" upperBound="-1"
+          eType="#//HardwarePlatform/HpFlowCarrier" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpProcessingUnit" eSuperTypes="#//HardwarePlatform/HpNetworkNode">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="HpProcessingUnitRule1 HpProcessingUnitRule2 HpProcessingUnitRule3"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="HpProcessingUnitRule1" value="(self.commChannel->notEmpty() and self.processorInterconnector->notEmpty()) implies  self.commChannel&lt;>self.processorInterconnector.commChannel"/>
+        <details key="HpProcessingUnitRule2" value="self.candidateTasks->notEmpty() implies  (self.spaceProcesses->collect(sp | sp.schedulableTasks))->includesAll(self.candidateTasks)"/>
+        <details key="HpProcessingUnitRule3" value="self.schedulableTasks->notEmpty() implies  (self.spaceProcesses->collect(sp | sp.schedulableTasks))->includesAll(self.schedulableTasks)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="commChannel" eType="#//HardwarePlatform/HpCommunicationChannel"
+          eOpposite="#//HardwarePlatform/HpCommunicationChannel/processingUnits"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpUtilizationFactor"
+          eType="#//RealTimeProperties/RtpTypes/RtpUtilizationFactorType" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="spaceProcesses" upperBound="-1"
+          eType="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSpaceProcess/processingUnit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="candidateTasks" upperBound="-1"
+          eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/favoriteProcessors"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableTasks" upperBound="-1"
+          eType="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask" eOpposite="#//SoftwarePlatform/SoftwareOperators/SoSchedulableTask/runOnProcessors"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilizationFactor" eType="#//RealTimeProperties/RtpTypes/RtpUtilizationFactorType"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="derivation" value="self.rtpUtilizationFactor"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processorInterconnector"
+          eType="#//HardwarePlatform/HpProcessorInterconnector" eOpposite="#//HardwarePlatform/HpProcessorInterconnector/processingUnits"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpComputingSpeed" eType="#//RealTimeProperties/RtpTypes/RtpComputingSpeedType"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpFlowCarrier" eSuperTypes="#//HardwarePlatform/HpNetworkNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hpNetworkNodeTargets"
+          lowerBound="1" upperBound="-1" eType="#//HardwarePlatform/HpNetworkNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ServiceCurveFunction"
+          eType="#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="TrafficShaperFunction"
+          eType="#//RealTimeProperties/RtpComputationAndAnalysisFunctions/PiecewiseLinearAnalysisFunction"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnitOrigin"
+          eType="#//HardwarePlatform/HpProcessingUnit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpCommunicationArbitrationPolicy"
+          lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpCommunicationRouter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="HpCommunicationRouterRule1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="HpCommunicationRouterRule1" value="self.networkPorts->forAll(np1,np2 | np1 &lt;> np2 implies np1.commChannel &lt;> np2.commChannel)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkPorts" lowerBound="1"
+          upperBound="-1" eType="#//HardwarePlatform/HpNetworkPort" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="" iD="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpNetworkPort">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="commChannel" lowerBound="1"
+          eType="#//HardwarePlatform/HpCommunicationChannel" eOpposite="#//HardwarePlatform/HpCommunicationChannel/networkPort"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpFlowRate" eType="#//RealTimeProperties/RtpTypes/RtpFlowRateType"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="flowRate" eType="#//RealTimeProperties/RtpTypes/RtpFlowRateType"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="derivation" value="self.rtpFlowRate"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpNetworkProtocol" lowerBound="1"
+          eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpTransmissionMode"
+          lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpCommunicationChannel">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="HpCommunicationChannelRule1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="HpCommunicationChannelRule1" value="self.processingUnits->isEmpty() implies (self.processingUnitSet->notEmpty() or self.networkPort->size()>=2)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnits" upperBound="-1"
+          eType="#//HardwarePlatform/HpProcessingUnit" eOpposite="#//HardwarePlatform/HpProcessingUnit/commChannel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkPort" lowerBound="1"
+          upperBound="-1" eType="#//HardwarePlatform/HpNetworkPort" eOpposite="#//HardwarePlatform/HpNetworkPort/commChannel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnitSet" upperBound="-1"
+          eType="#//HardwarePlatform/HpProcessorInterconnector" eOpposite="#//HardwarePlatform/HpProcessorInterconnector/commChannel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkNodeSet" upperBound="-1"
+          eType="#//HardwarePlatform/HpNetworkNode"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpProcessorInterconnector" eSuperTypes="#//HardwarePlatform/HpNetworkNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnits" lowerBound="2"
+          upperBound="-1" eType="#//HardwarePlatform/HpProcessingUnit" eOpposite="#//HardwarePlatform/HpProcessingUnit/processorInterconnector"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="commChannel" eType="#//HardwarePlatform/HpCommunicationChannel"
+          eOpposite="#//HardwarePlatform/HpCommunicationChannel/processingUnitSet"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rtpMultiprocessorCategory"
+          lowerBound="1" eType="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HpNetworkNode" abstract="true" interface="true"/>
+  </eSubpackages>
+  <eSubpackages name="RealTimeProperties" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties"
+      nsPrefix="RTP">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="RealTimeCommonType" abstract="true"
+        interface="true"/>
+    <eSubpackages name="RtpTypes" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpTypes"
+        nsPrefix="RtpTypes">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPriorityType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/IntegerVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPeriodicityType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPeriodicType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPeriodicityType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="jitter" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpAperiodicType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPeriodicityType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpSporadicType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPeriodicityType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interArrival" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpReleaseTimeType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="releaseTime" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referring" eType="#//RealTimeProperties/RtpHelperTypes/RtpReferenceType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpOffsetType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="offset" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpMutuExcluResourceUtilizationType"
+          eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="timeUtilization" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="specialAccessPriority"
+            eType="#//RealTimeProperties/RtpTypes/RtpPriorityType" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
+            eType="#//SoftwarePlatform/SoftwareOperators/SoInteractionResource"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpDeadlineType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpResponseTimeType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="responseTime" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpBlockingTimeType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="blockingTime" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpRepetitionType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="repetition" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpFlowRateType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="flowRate" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpDataRateType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpUtilizationFactorType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="U" lowerBound="1" eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherExecutionTime" lowerBound="1" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherExecutionTime" lowerBound="1" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherExecutionTime" lowerBound="1" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        </eOperations>
+        <eOperations name="adoptsCalculatedValue" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValue" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpCriticalityType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/IntegerVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpComputingSpeedType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="computingSpeed" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPreemptibilityType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPreemptibleType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPreemptibilityType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="cost" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpNonPreemptibleType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPreemptibilityType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpCooperativeType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpPreemptibilityType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="nonPreemptibleSteps"
+            upperBound="-1" eType="#//SoftwarePlatform/SoftwareBehavior/SbStep"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="nonPreemptibleIntervals"
+            upperBound="-1" eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpSelfSuspensionType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpSelfSuspendedType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpSelfSuspensionType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="selfSuspensionTime"
+            eType="#//RealTimeProperties/RtpTypes/RtpExecutionTimeType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpNotSelfSuspendedType" eSuperTypes="#//RealTimeProperties/RtpTypes/RtpSelfSuspensionType"/>
+    </eSubpackages>
+    <eSubpackages name="RtpUtilityTypes" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpUtilityTypes"
+        nsPrefix="RtpUT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerMatrix" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="IntegerMatrixRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="IntegerMatrixRule1" value="self.matrixElements->forAll(el1 : IntegerVector, el2 : IntegerVector | el1.oclAsSet()->size() = el2.oclAsSet()->size())"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="matrixElements" ordered="false"
+            lowerBound="1" upperBound="-1" eType="#//RealTimeProperties/RtpUtilityTypes/IntegerVector"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerVector" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorElements" ordered="false"
+            unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealVector" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorElements" ordered="false"
+            unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealMatrix" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="RealMatrixRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="RealMatrixRule1" value="self.matrixElements->forAll(el1 : RealVector, el2 : RealVector | el1.oclAsSet()->size() = el2.oclAsSet()->size())"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="matrixElements" ordered="false"
+            lowerBound="1" upperBound="-1" eType="#//RealTimeProperties/RtpUtilityTypes/RealVector"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerSet" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="setElements" ordered="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerList" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="listElements" unique="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealSet" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="setElements" ordered="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealList" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="listElements" unique="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerInterval" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="IntegerIntervalRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="IntegerIntervalRule1" value="self.boundMin &lt; self.boundMax"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiterMin" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/DelimiterType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="boundMin" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="boundMax" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiterMax" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/DelimiterType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="DelimiterType">
+        <eLiterals name="open"/>
+        <eLiterals name="closed" value="1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealInterval" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="RealIntervalRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="RealIntervalRule1" value="self.boundMin &lt; self.boundMax"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiterMin" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/DelimiterType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="boundMin" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="boundMax" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiterMax" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/DelimiterType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RealVariable" abstract="true" interface="true"
+          eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MeasuredReal" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/RealVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            changeable="false" defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unknownValueName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolUsedDescriptions"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="allOldValues" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            changeable="false"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="UnknownReal" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/RealVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SimpleReal" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/RealVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MaxMinAvgReal" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="MaxMinAvgRealRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="MaxMinAvgRealRule1" value="self.avgValue.oclAsSet()->notEmpty() or self.minValue.oclAsSet()->notEmpty() or self.maxValue.oclAsSet()->notEmpty()"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="avgValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MeasuredInteger" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/IntegerVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" changeable="false"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unknownValueName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolUsedDescriptions"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="allOldValues" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            changeable="false"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="UnknownInteger" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/IntegerVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="" iD="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SimpleInteger" eSuperTypes="#//RealTimeProperties/RtpUtilityTypes/IntegerVariable">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MaxMinAvgInteger" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="MaxMinAvgIntegerRule1"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="MaxMinAvgIntegerRule1" value="self.avgValue.oclAsSet()->notEmpty() or self.minValue.oclAsSet()->notEmpty() or self.maxValue.oclAsSet()->notEmpty()"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="avgValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="-1"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="-1"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="RtpMeasurementUnits" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpMeasurementUnits"
+        nsPrefix="RtpMU">
+      <eClassifiers xsi:type="ecore:EEnum" name="TimeUnits">
+        <eLiterals name="us" literal="us"/>
+        <eLiterals name="ms" value="1"/>
+        <eLiterals name="s" value="2"/>
+        <eLiterals name="min" value="3"/>
+        <eLiterals name="hr" value="4"/>
+        <eLiterals name="day" value="5"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnits">
+        <eLiterals name="bit"/>
+        <eLiterals name="Byte" value="1"/>
+        <eLiterals name="KB" value="2"/>
+        <eLiterals name="MB" value="3"/>
+        <eLiterals name="GB" value="4"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="PowerUnits">
+        <eLiterals name="w"/>
+        <eLiterals name="Kw" value="1" literal="Kw"/>
+        <eLiterals name="Mw" value="2" literal="Mw"/>
+        <eLiterals name="Gw" value="3" literal="Gw"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="DataTxRateUnits">
+        <eLiterals name="b_per_s" literal="b_per_s"/>
+        <eLiterals name="Kb_per_s" value="1"/>
+        <eLiterals name="Mb_per_s" value="2"/>
+        <eLiterals name="Gb_per_s" value="3" literal="Gb_per_s"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="FrequencyUnits">
+        <eLiterals name="Hz"/>
+        <eLiterals name="KHz" value="1"/>
+        <eLiterals name="MHz" value="2"/>
+        <eLiterals name="GHz" value="3"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="RtpHelperTypes" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpHelperTypes"
+        nsPrefix="RtpHT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpDurationType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDuration" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDuration" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDuration" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpDurationType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpInterArrivalType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherInterArrival" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherInterArrival" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherInterArrival" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpInterArrivalType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpDataRateType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataRate" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataRateType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataRate" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataRateType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataRate" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataRateType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataRateType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/DataTxRateUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpPowerType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherPower" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpPowerType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherPower" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpPowerType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherPower" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpPowerType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpPowerType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/PowerUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/PowerUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpDataSizeType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataSize" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataSize" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherDataSize" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpFrequencyType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eOperations name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherFrequency" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType"/>
+        </eOperations>
+        <eOperations name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherFrequency" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType"/>
+        </eOperations>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="otherFrequency" lowerBound="1" eType="#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType"/>
+        </eOperations>
+        <eOperations name="convertsTo" eType="#//RealTimeProperties/RtpHelperTypes/RtpFrequencyType">
+          <eParameters name="unit" lowerBound="1" eType="#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1"
+            eType="#//RealTimeProperties/RtpMeasurementUnits/FrequencyUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVariable" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeValue" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeList" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="vector" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealVector" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeSimple" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+            defaultValueLiteral="-1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeMma" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="minMaxAvg" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/MaxMinAvgReal" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeInterval" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interval" lowerBound="1"
+            eType="#//RealTimeProperties/RtpUtilityTypes/RealInterval" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="RtpScheduleLinkType">
+        <eLiterals name="after_the_beginning_of"/>
+        <eLiterals name="after_the_end_of" value="1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpTimeLinkType" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleLink" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpScheduleLinkType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="jobNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="0"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referenceActivity"
+            lowerBound="1" eType="#//SoftwarePlatform/SoftwareBehavior/SbSchedulingActivity"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpReferenceType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpTimeReferenceType" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpReferenceType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="timeLink" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpTimeLinkType" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpClockRefrenceType" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpReferenceType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeValueToBeCalculated"
+          eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValue">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unknownValueName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionToBeRequested"
+            eType="#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpComputationFunction"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeCalculatedValue"
+          eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValue">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unknownValueName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            iD="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolUsedDescriptions"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral=""/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allOldValues" upperBound="-1"
+            eType="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeConcreteValue"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpExecutionTimeConcreteValue" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RtpHelperTypes/RtpExecutionTimeValue"/>
+    </eSubpackages>
+    <eSubpackages name="RtpProtocolsAndPolicies" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpProtocolsAndPolicies"
+        nsPrefix="RtpPAP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpProtectProtocolType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocolType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PIPProtectProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PCPProtectProtocol" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpProtectProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpCommunicationArbitrationPolicyType"
+          abstract="true" interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="policyType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FIFOCommunicationArbitrationPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="FixedPriorityCommunicationArbitrationPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="LIFOCommunicationArbitrationPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationArbitrationPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpWaitingQueuePolicyType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="policyType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FIFOWaitingQueuePolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="LIFOWaitingQueuePolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PriorityWaitingQueuePolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpWaitingQueuePolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpNetworkProtocolType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocolType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CANNetworkProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AFDXNetworkProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ATMNetworkProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="FIPNetworkProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="FDDINetworkProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpNetworkProtocolType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpSchedulingPolicyType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="policyType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FixedPrioritySchedulingPolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="LeastLaxityFirstSchedulingPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RoundRobinSchedulingPolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="EarliestDeadlineFirstSchedulingPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpSchedulingPolicyType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpCommunicationMechanismType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="RtpDataSize" eType="#//RealTimeProperties/RtpHelperTypes/RtpDataSizeType"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanismType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PipeCommunicationMechanism" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DataQueueCommunicationMechanism"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpCommunicationMechanismType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="overwriting" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpTransmissionModeType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="modeType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FullDuplexTransmissionMode" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="HalfDuplexTransmissionMode" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SimpleTransmissionMode" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTransmissionModeType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ICPPProtectProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/PCPProtectProtocol"/>
+      <eClassifiers xsi:type="ecore:EClass" name="OCPPProtectProtocol" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/PCPProtectProtocol"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DeadlineMonotonicSchedulingPolicy"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/FixedPrioritySchedulingPolicy"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RateMonotonicSchedulingPolicy" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/FixedPrioritySchedulingPolicy"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpTaskAllocationType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="AllocationType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PartitionedTaskAllocation" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="FullMigrationTaskAllocation" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RestrictedMigrationTaskAllocation"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpTaskAllocationType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpMultiprocessorCategoryType" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="categoryType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HeterogenousMultiprocessorCategory"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="HomogeneousMultiprocessorCategory"
+          eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="UniformMultiprocessorCategory" eSuperTypes="#//RealTimeProperties/RtpProtocolsAndPolicies/RtpMultiprocessorCategoryType"/>
+    </eSubpackages>
+    <eSubpackages name="RtpComputationAndAnalysisFunctions" nsURI="http://www.ensma.fr/MoSaRT/RealTimeProperties/RtpComputationAndAnalysisFunctions"
+        nsPrefix="RtpCAF">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpComputationFunction" abstract="true"
+          interface="true" eSuperTypes="#//RealTimeProperties/RealTimeCommonType">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" volatile="true" transient="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="WeibullComputationFunction" eSuperTypes="#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpComputationFunction">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RtpAnalysisFunction" eSuperTypes="#//RealTimeProperties/RealTimeCommonType"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PiecewiseLinearAnalysisFunction"
+          eSuperTypes="#//RealTimeProperties/RtpComputationAndAnalysisFunctions/RtpAnalysisFunction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="Intervals" lowerBound="1"
+            upperBound="-1" eType="#//RealTimeProperties/RtpUtilityTypes/RealInterval"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="MultiplicationCoefficient"
+            lowerBound="1" eType="#//RealTimeProperties/RtpUtilityTypes/RealList"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="XUnit" eType="#//RealTimeProperties/RtpMeasurementUnits/TimeUnits"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="YUnit" eType="#//RealTimeProperties/RtpMeasurementUnits/DataSizeUnits"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="FunctionalElements" nsURI="http://www.ensma.fr/MoSaRT/FunctionalElements"
+      nsPrefix="FE">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemFunctionalSide">
+      <eOperations name="importUmlModel" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+        <eParameters name="importedModel" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="umlModel" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Model"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

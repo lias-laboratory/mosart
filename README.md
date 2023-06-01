@@ -81,7 +81,7 @@ The repository contains of the following plugins:
 
 * Yassine OUHAMMOU, Model-based Framework for Using Advanced Scheduling Theory in Real-Time Systems Design, Thesis, ISAE-ENSMA, december, 2013.
 
-## Software licence agreement
+## Software license agreement
 
 * Details the license agreement of Mosart: [LICENSE](LICENSE)
 
